@@ -14,16 +14,16 @@ PORT = 34197 # Arbitrary non-privileged port
 try :
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     print('Socket created')
-except (socket.error, msg) :
-    print('Failed to create socket. Error Code : ' + str(msg[0]) + ' Message ' + msg[1])
+except Exception as e:
+    print('Failed to create socket. Error Code : ' + e)
     sys.exit()
  
  
 # Bind socket to local host and port
 try:
     s.bind((HOST, PORT))
-except (socket.error , msg):
-    print('Bind failed. Error Code : ' + str(msg[0]) + ' Message ' + msg[1])
+except Exception as e:
+    print('Bind failed. Error Code : ' + e)
     sys.exit()
      
 print('Socket bind complete')

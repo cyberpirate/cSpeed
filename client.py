@@ -11,7 +11,7 @@ import sys  #for exit
 # create dgram udp socket
 try:
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-except socket.error:
+except Exception as e:
     print('Failed to create socket')
     sys.exit()
  
@@ -32,6 +32,6 @@ while(1) :
          
         print('Server reply : ' + reply)
      
-    except socket.error, msg:
-        print('Error Code : ' + str(msg[0]) + ' Message ' + msg[1])
+    except Exception as e:
+        print('Error : ' + e)
         sys.exit()
