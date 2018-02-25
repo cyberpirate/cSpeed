@@ -38,7 +38,7 @@ while 1:
     if not data: 
         break
      
-    reply = 'OK...' + data
+    reply = 'OK...' + data.encode('utf-8')
      
     s.sendto(reply , addr)
     print('Message[' + addr[0] + ':' + str(addr[1]) + '] - ' + data.strip())

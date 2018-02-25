@@ -15,15 +15,15 @@ except Exception as e:
     print('Failed to create socket')
     sys.exit()
  
-host = 'localhost'
+host = '208.113.164.65'
 port = 34197
  
 while(1) :
-    msg = raw_input('Enter message to send : ')
+    msg = input('Enter message to send : ')
      
     try :
         #Set the whole string
-        s.sendto(msg, (host, port))
+        s.sendto(bytes(msg, 'utf-8'), (host, port))
          
         # receive data from client (data, addr)
         d = s.recvfrom(1024)
