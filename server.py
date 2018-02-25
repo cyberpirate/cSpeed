@@ -15,7 +15,7 @@ try :
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     print('Socket created')
 except Exception as e:
-    print('Failed to create socket. Error Code : ' + e)
+    print('Failed to create socket. Error Code : ' + str(e))
     sys.exit()
  
  
@@ -23,7 +23,7 @@ except Exception as e:
 try:
     s.bind((HOST, PORT))
 except Exception as e:
-    print('Bind failed. Error Code : ' + e)
+    print('Bind failed. Error Code : ' + str(e))
     sys.exit()
      
 print('Socket bind complete')

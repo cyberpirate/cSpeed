@@ -33,5 +33,5 @@ while(1) :
         print('Server reply : ' + reply)
      
     except Exception as e:
-        print('Error : ' + e)
+        print('Error : ' + str(e))
         sys.exit()
