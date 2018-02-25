@@ -27,7 +27,7 @@ except Exception as e:
     sys.exit()
      
 print('Socket bind complete')
- 
+
 #now keep talking with the client
 while 1:
     # receive data from client (data, addr)
@@ -37,8 +37,8 @@ while 1:
      
     if not data: 
         break
-     
-    reply = 'OK...' + data.encode('utf-8')
+    
+    reply = 'OK...' + str(int.from_bytes(data[0:3], byteorder='big'))
      
     s.sendto(reply , addr)
     print('Message[' + addr[0] + ':' + str(addr[1]) + '] - ' + data.strip())

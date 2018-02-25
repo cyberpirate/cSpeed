@@ -17,12 +17,15 @@ except Exception as e:
  
 host = '208.113.164.65'
 port = 34197
- 
+
+i = 0
+
 while(1) :
-    msg = input('Enter message to send : ')
      
     try :
         #Set the whole string
+        msg = bytes([i])
+        i = i + 1
         s.sendto(bytes(msg, 'utf-8'), (host, port))
          
         # receive data from client (data, addr)
