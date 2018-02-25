@@ -41,6 +41,6 @@ while 1:
     reply = 'OK...' + str(int.from_bytes(data[0:3], byteorder='big'))
      
     s.sendto(bytes(reply, 'utf-8'), addr)
-    print('Message[' + addr[0] + ':' + str(addr[1]) + '] - ' + data.strip())
+    print('Message[' + str(addr[0]) + ':' + str(addr[1]) + '] - ' + data.strip())
      
 s.close()
